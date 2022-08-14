@@ -30,7 +30,7 @@ build() {
 
   patch -Np1 -i "$srcdir/flac-${pkgver}.patch"
 
-  ./configure --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi \
+  ./configure --prefix="${PORTLIBS_PREFIX}" --host=powerpc-eabi \
     --disable-shared --enable-static --disable-examples \
     --disable-xmms-plugin --disable-doxygen-docs \
     --disable-sse
