@@ -3,7 +3,7 @@
 # Contributor: oreo639 <oreo6391@gmail.com>
 
 pkgname=ppc-flac
-pkgver=1.3.2
+pkgver=1.3.4
 pkgrel=1
 pkgdesc='Open source Free Lossless Audio Codec'
 arch=('any')
@@ -19,8 +19,8 @@ source=(
   "flac-${pkgver}.patch"
 )
 sha256sums=(
-  '91cfc3ed61dc40f47f050a109b08610667d73477af6ef36dcad31c31a4a8d53f'
-  'f9351aee0a7dc399ed3b83172b38770bc91c3c3eac44b57fc8aa541df7425fc3'
+  '8ff0607e75a322dd7cd6ec48f4f225471404ae2730d0ea945127b1355155e737'
+  'd9e0eb8e849a0f8b46a02fdeba50d1573d8e0f3337041296c66de64fe8a85b8d'
 )
 
 build() {
@@ -33,7 +33,8 @@ build() {
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=powerpc-eabi \
     --disable-shared --enable-static --disable-examples \
     --disable-xmms-plugin --disable-doxygen-docs \
-    --disable-sse
+    --disable-sse --disable-oggtest --disable-examples \
+    --disable-thorough-tests
 
   make -C src/libFLAC
 }
