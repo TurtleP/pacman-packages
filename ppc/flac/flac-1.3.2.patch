@@ -5,7 +5,7 @@ diff -Naur flac-1.3.2-stock/include/share/compat.h flac-1.3.2/include/share/comp
  #define flac_vfprintf vfprintf
 
  #define flac_fopen fopen
-+#ifdef __WIIU__
++#ifdef __PPC__
 +#define flac_chmod(a, b) printf("flac_chmod: not implemented\n")
 +#define flac_utime(a, b) printf("flac_utime: not implemented\n")
 +#define chown(a, b, c) printf("flac_chown: not implemented\n")
